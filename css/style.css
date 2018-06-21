@@ -85,10 +85,11 @@ body {
 .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 15px 40px;
+    padding: 10px 40px;
     display: inline-block;
     border-radius: 100px;
     transition: all .2s ;
+    position: relative;
 }
 
 .btn:hover{
@@ -105,6 +106,36 @@ body {
     background-color: #fff;
     color: #777;
 }
+
+.btn::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+.btn-white::after{
+    background-color: white;
+}
+
+.btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated{
+    animation-name: moveInBottom;
+    animation-duration: .5s;
+    animation-timing-function: ease-out;
+    animation-delay: .75s;
+    animation-fill-mode: backwards;
+}
+
 
 @keyframes moveInLeft{
     0%{
@@ -131,6 +162,17 @@ body {
     100%{
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@keyframes moveInBottom{
+    0%{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
