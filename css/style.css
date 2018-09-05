@@ -227,4 +227,10 @@ article progress{
         float: center;
         width: 100vw;
     }
+
+    .btn:link,
+    .btn:visited {
+    padding: 1rem 2rem;
+}
+
 }
