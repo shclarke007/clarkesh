@@ -189,6 +189,27 @@ h2{
     text-transform: uppercase;
 }
 
-.details{
+.description{
     text-align: center;
+}
+
+.aboutSec{
+    float: left;
+    padding: 1em;
+    width: 50%;
+    /* border: 1px #777 solid; */
+}
+
+.skillSec{
+    float:right;
+    width: 50%;
+    /* border: 1px #777 solid; */
+}
+
+.skillSec article {
+    text-align: center;
+}
+
+.projects{
+    clear: both;
 }
