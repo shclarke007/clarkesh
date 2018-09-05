@@ -28,7 +28,7 @@ body {
 }
 
 .header{
-    height: 96vh;
+    height: 100vh;
     background-image: linear-gradient(
         to right bottom, 
     rgba(161, 231, 252, 0.8),
@@ -212,4 +212,19 @@ h2{
 
 .projects{
     clear: both;
+}
+
+article progress{
+    color: rgb(0, 148, 153);
+}
+
+@media only screen and (max-width: 600px) {
+    .skillSec{
+        clear: both;
+        width: 100vw;
+    }
+    .aboutSec{
+        float: center;
+        width: 100vw;
+    }
 }
