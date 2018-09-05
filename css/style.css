@@ -208,6 +208,7 @@ h2{
 
 .skillSec article {
     text-align: center;
+    margin: 15px;
 }
 
 .projects{
@@ -216,6 +217,8 @@ h2{
 
 article progress{
     color: rgb(0, 148, 153);
+    height: 30px;
+    width: 100%;
 }
 
 @media only screen and (max-width: 600px) {
