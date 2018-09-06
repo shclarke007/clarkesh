@@ -25,6 +25,8 @@ body {
     color: #777;
     /* padding: 3rem; */
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 .header{
@@ -193,27 +195,41 @@ h2{
     text-align: center;
 }
 
-.aboutSec{
-    float: left;
-    padding: 1em;
-    width: 50%;
-    /* border: 1px #777 solid; */
+.about-me-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px;
 }
 
-.skillSec{
-    float:right;
-    width: 50%;
-    /* border: 1px #777 solid; */
+.about-me-section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;  
 }
 
-.skillSec article {
-    text-align: center;
-    margin: 15px;
+.skills-container{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
 }
 
-.projects{
-    clear: both;
+
+.project-section{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
+
+.project-item{
+    /* border: 1px solid #777; */
+    box-shadow:2px 2px 5px #777;
+    width: 300px;
+    height:300px;
+    margin: 10px 3px;
+}
+
 
 article progress{
     color: rgb(0, 148, 153);
