@@ -192,34 +192,43 @@ h2{
 }
 
 .description{
-    text-align: center;
+    text-align: justify;
+    padding: 0 10px;
 }
 
 .about-me-container{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 20px;
+    /* margin: 20px; */
 }
 
 .about-me-section{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;  
+    height: 100vh;
+    /* border: 1px solid #777; */
 }
 
 .skills-container{
     display: flex;
     justify-content: center;
     margin: 20px;
+    height: 100vh;
 }
 
+em{
+    font-size: 2em;
+    color: rgb(14,162,189);
+}
 
 .project-section{
     display: flex;
     justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
+    height: 100vh;
 }
 
 .project-item{
@@ -231,10 +240,14 @@ h2{
 }
 
 
-article progress{
-    color: rgb(0, 148, 153);
-    height: 30px;
-    width: 100%;
+h3{
+    display: inline-block;
+    padding: 30px;
+    color: rgb(14, 162, 189);
+}
+
+.skills-container{
+    /* background-color: rgba(14, 162, 189, 0.8); */
 }
 
 @media only screen and (max-width: 600px) {
