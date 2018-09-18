@@ -224,7 +224,7 @@ h2{
 .skills-container{
     display: flex;
     justify-content: flex-start;
-    margin: 50px;
+    margin-top: 50px;
     /* height: 100vh; */
     flex-direction: column;
     /* border: 1px solid #707070;   */
