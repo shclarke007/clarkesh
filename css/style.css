@@ -194,6 +194,7 @@ h2{
 .description{
     text-align: justify;
     padding: 0 10px;
+    line-height: 2em;
 }
 
 .about-me-container{
@@ -201,24 +202,42 @@ h2{
     justify-content: center;
     flex-direction: column;
     /* margin: 20px; */
+    /* border: 1px solid rgb(233, 71, 71);  */
 }
 
 .about-me-section{
     display: flex;
     justify-content: flex-start;
     flex-direction: column;  
-    height: 100vh;
-    /* border: 1px solid #777; */
+    /* height: 100vh; */
+    /* border: 1px solid #777;  */
+}
+
+.about-me-item{
+    /* border: 1px dashed #777;  */
+    display: flex;
+    flex-wrap:nowrap;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .skills-container{
     display: flex;
-    justify-content: center;
-    margin: 20px;
-    height: 100vh;
+    justify-content: flex-start;
+    margin: 50px;
+    /* height: 100vh; */
+    flex-direction: column;
+    /* border: 1px solid #707070;   */
 }
 
-em{
+.skills-item{
+    display: flex;
+    flex-direction: row;
+    /* border: 1px solid #777;  */
+    justify-content: center;
+}
+
+.big{
     font-size: 2em;
     color: rgb(14,162,189);
 }
@@ -239,30 +258,25 @@ em{
     margin: 10px 3px;
 }
 
-
 h3{
     display: inline-block;
     padding: 30px;
     color: rgb(14, 162, 189);
 }
 
-.skills-container{
-    /* background-color: rgba(14, 162, 189, 0.8); */
-}
+
+
+
+
+
 
 @media only screen and (max-width: 600px) {
-    .skillSec{
-        clear: both;
-        width: 100vw;
-    }
-    .aboutSec{
-        float: center;
-        width: 100vw;
-    }
-
+ 
     .btn:link,
     .btn:visited {
     padding: 1rem 2rem;
 }
+
+
 
 }
