@@ -235,6 +235,7 @@ h2{
     flex-direction: row;
     /* border: 1px solid #777;  */
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .big{
