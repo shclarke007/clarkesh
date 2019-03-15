@@ -192,7 +192,7 @@ h2{
 }
 
 .description{
-    text-align: justify;
+    text-justify: auto;
     padding: 0 10px;
     line-height: 2em;
 }
@@ -201,6 +201,9 @@ h2{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    max-width: 80%;
+    margin: auto;
+    flex-wrap: wrap;
     /* margin: 20px; */
     /* border: 1px solid rgb(233, 71, 71);  */
 }
@@ -216,10 +219,16 @@ h2{
 .about-me-item{
     /* border: 1px dashed #777;  */
     display: flex;
-    flex-wrap:nowrap;
+    flex-wrap:wrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
+
+/* .pic{
+    width: 200px;
+    height: 200px;
+    margin-left: 5em;
+} */
 
 .skills-container{
     display: flex;
@@ -239,24 +248,47 @@ h2{
 }
 
 .big{
-    font-size: 2em;
+    font-size: 1.2em;
     color: rgb(14,162,189);
+}
+.project-container{
+    padding-top: 3em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 80%;
+    margin: auto;
 }
 
 .project-section{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-direction: row;
     flex-wrap: wrap;
     height: 100vh;
 }
 
-.project-item{
+.project-item {
     /* border: 1px solid #777; */
     box-shadow:2px 2px 5px #777;
     width: 300px;
     height:300px;
     margin: 10px 3px;
+    /* color: #fff; */
+}
+
+.project-item > img{
+    width: 300px;
+    height:300px;
+}
+
+.project-item:hover{
+    color: #777;
+    
+}
+
+.project-item > p {
+    text-align: center;
 }
 
 h3{
@@ -265,18 +297,15 @@ h3{
     color: rgb(14, 162, 189);
 }
 
-
-
-
-
-
-
 @media only screen and (max-width: 600px) {
  
     .btn:link,
     .btn:visited {
     padding: 1rem 2rem;
-}
+    }
+    .about-me-container{
+        max-width: 90%;
+    }
 
 
 
