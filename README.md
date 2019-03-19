@@ -1,4 +1,6 @@
-# HTML-CSS-Project
-Portfolio website
-Personal project to highlight my skills.
-Built using HTML & CSS only
+# Portfolio
+Portfolio website developed to showcase HTML & CSS skills.  
+
+## Tech 
+HTML for markup
+CSS for layout
