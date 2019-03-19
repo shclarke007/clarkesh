@@ -210,12 +210,16 @@ h2{
 }
 
 /* .about-me-item {
-    border: 1px dashed #777;  
     display: flex;
-    flex-wrap:wrap;
-    flex-direction: row;
+    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-around;
 } */
+
+.about-me-item > div > img {
+    width: 150px;
+    height: 150px;
+}
 
 .big{
     font-size: 1.1em;
