@@ -1,6 +1,4 @@
 # Portfolio
-
-## Purpose
 Portfolio website developed to showcase front-end development skills with HTML & CSS.  
 
 ## Tech 
