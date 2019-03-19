@@ -23,7 +23,6 @@ body {
     font-size: 1.6rem;
     line-height: 1.7;
     color: #777;
-    /* padding: 3rem; */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -76,7 +75,6 @@ body {
     animation-name: moveInLeft;
     animation-duration: 2.5s;
     animation-timing-function: ease-out;
-    /* animation-delay: 3s; */
 }
 
 .heading-primary-sub{
@@ -99,7 +97,6 @@ body {
     border-radius: 10rem;
     transition: all .2s ;
     position: relative;
-    /* font-size: 1.6rem; */
 }
 
 .btn:hover{
@@ -204,16 +201,12 @@ h2{
     max-width: 80%;
     margin: auto;
     flex-wrap: wrap;
-    /* margin: 20px; */
-    /* border: 1px solid rgb(233, 71, 71);  */
 }
 
 .about-me-section{
     display: flex;
     justify-content: flex-start;
     flex-direction: column;  
-    /* height: 100vh; */
-    /* border: 1px solid #777;  */
 }
 
 /* .about-me-item {
@@ -233,7 +226,6 @@ h2{
 .title {
     font-size: 1.1em;
     color: #28b485;
-    /* color: rgba(161, 231, 252) */
 }
 
 .experience > p {
@@ -246,25 +238,16 @@ h2{
     margin-top: 20px;
 }
 
-/* .pic{
-    width: 200px;
-    height: 200px;
-    margin-left: 5em;
-} */
-
 .skills-container{
     display: flex;
     justify-content: flex-start;
     margin-top: 50px;
-    /* height: 100vh; */
     flex-direction: column;
-    /* border: 1px solid #707070;   */
 }
 
 .skills-item{
     display: flex;
     flex-direction: row;
-    /* border: 1px solid #777;  */
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -287,12 +270,10 @@ h2{
 }
 
 .project-item {
-    /* border: 1px solid #777; */
     box-shadow:2px 2px 5px #777;
     width: 300px;
     height:300px;
     margin: 10px 3px;
-    /* color: #fff; */
 }
 
 .project-item > img{
@@ -302,8 +283,6 @@ h2{
 
 .contents > h3 {
     padding: 0 2em;
-    /* margin-top: -1.5em; */
-    /* margin-bottom: 1.5em; */
 }
 
 .contents > a {
@@ -321,19 +300,9 @@ h2{
     z-index: 2;
 }
 
-/* .front:hover {
-    transform: rotateY(180deg);
-    opacity: 0;
-} */
-
-.details {
-    /* opacity: 0; */
-    z-index: 3;
-}
-
 h3 {
     display: inline-block;
-    padding: 30px;
+    padding: 20px;
     color: rgb(14, 162, 189);
 }
 
@@ -346,7 +315,5 @@ h3 {
     .about-me-container{
         max-width: 90%;
     }
-
-
 
 }
