@@ -210,13 +210,6 @@ h2 {
   flex-direction: column;
 }
 
-/* .about-me-item {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-around;
-} */
-
 .about-me-item > div > img {
   width: 150px;
   height: 150px;
@@ -262,8 +255,10 @@ h2 {
   padding: 0.2em;
   font-size: 0.9em;
 }
+
 .skills {
   padding: 0.3em;
+  text-align: center;
 }
 
 .project-container {
