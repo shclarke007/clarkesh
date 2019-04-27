@@ -224,7 +224,6 @@ h2 {
 
 .big {
   font-size: 1.1em;
-  /* color: #28b485; */
   color: rgb(14, 162, 189);
 }
 
@@ -260,7 +259,8 @@ h2 {
 .skill-tags {
   background-color: #28b485;
   color: #fff;
-  padding: 2.5px;
+  padding: 0.2em;
+  font-size: 0.9em;
 }
 .skills {
   padding: 0.3em;
