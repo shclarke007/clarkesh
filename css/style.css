@@ -193,6 +193,7 @@ h2 {
   text-justify: auto;
   padding: 0 10px;
   line-height: 2em;
+  margin-bottom: 0.7em;
 }
 
 .about-me-container {
@@ -217,11 +218,17 @@ h2 {
 
 .big {
   font-size: 1.1em;
+}
+
+.teal {
   color: rgb(14, 162, 189);
 }
 
 .title {
   font-size: 1.1em;
+}
+
+.green {
   color: #28b485;
 }
 
@@ -233,6 +240,11 @@ h2 {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
+}
+
+.list-items {
+  margin-left: 1.5em;
+  text-justify: auto;
 }
 
 .skills-container {
