@@ -115,6 +115,11 @@ body {
   color: #777;
 }
 
+.white {
+  color: #e7e7e7;
+}
+
+
 .btn::after {
   content: "";
   display: inline-block;
@@ -182,6 +187,15 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.social-icons {
+  margin-top: 4em;
+}
+
+.fab, .fas {
+  font-size: 2.3em;
+  margin: 5px;
 }
 
 h2 {
@@ -306,8 +320,12 @@ h2 {
   padding: 0 2em;
 }
 
-.contents > a {
+.anchors {
   text-decoration: none;
+}
+
+.contents > a {
+  /* text-decoration: none; */
   padding: 0 2em;
 }
 
@@ -342,5 +360,9 @@ h3 {
 
   h3 {
     padding: 0 1em 0 0;
+  }
+
+  .social-icons {
+    margin-top: 1em;
   }
 }
