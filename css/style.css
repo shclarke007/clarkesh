@@ -257,6 +257,15 @@ h2 {
   flex-wrap: wrap;
 }
 
+.skill-tags {
+  background-color: #28b485;
+  color: #fff;
+  padding: 2.5px;
+}
+.skills {
+  padding: 0.3em;
+}
+
 .project-container {
   padding-top: 3em;
   display: flex;
@@ -277,7 +286,7 @@ h2 {
 .project-item {
   box-shadow: 2px 2px 5px #777;
   width: 300px;
-  height: 300px;
+  height: 350px;
   margin: 10px 3px;
 }
 
@@ -318,5 +327,13 @@ h3 {
   }
   .about-me-container {
     max-width: 90%;
+  }
+
+  .project-item {
+    height: auto;
+  }
+
+  h3 {
+    padding: 0 1em 0 0;
   }
 }
