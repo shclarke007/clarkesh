@@ -294,6 +294,11 @@ h2 {
 .skills {
   padding: 0.3em;
   text-align: center;
+  margin-bottom: 10px;
+}
+
+.center {
+  text-align: center;
 }
 
 .project-container {
