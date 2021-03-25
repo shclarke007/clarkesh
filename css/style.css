@@ -320,8 +320,8 @@ h2 {
 
 .project-item {
   box-shadow: 2px 2px 5px #777;
-  width: 300px;
-  height: 350px;
+  width: 400px;
+  height: auto;
   margin: 10px 3px;
 }
 
