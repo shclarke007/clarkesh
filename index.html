@@ -1,233 +1,620 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
-      crossorigin="anonymous"
-    />
-    <!-- <link rel="stylesheet" href="css/icon-font.css" /> -->
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="shortcut icon" type="image/png" href="./img/logo_2.png" />
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Shaneil Clarke</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400..600&family=JetBrains+Mono:wght@400..500&display=swap">
+<style>
+:root{
+  --bg:#EDEFF3;
+  --surface:#F7F8FA;
+  --fg:#0F1219;
+  --muted:#535A6A;
+  --line:#D2D6DF;
+  --accent:#2A3BFF;
+  --accent-ink:#FFFFFF;
+  --dot:rgba(15,18,25,.24);
+  --font-display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;
+  --font-body:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0C0E13;--surface:#12151C;--fg:#E9ECF3;--muted:#9299A8;--line:#242936;
+    --accent:#8F9BFF;--accent-ink:#0C0E13;--dot:rgba(233,236,243,.22);color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0C0E13;--surface:#12151C;--fg:#E9ECF3;--muted:#9299A8;--line:#242936;
+  --accent:#8F9BFF;--accent-ink:#0C0E13;--dot:rgba(233,236,243,.22);color-scheme:dark;
+}
 
-    <title>Shaneil Clarke | MA Law | Software Engineer</title>
-  </head>
-  <body>
-    <header class="header">
-      <div class="logo-box">
-        <!-- <img src="./img/logo_2.png" alt="logo" class="logo"> -->
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 1.0625rem/1.6 var(--font-body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+.wrap{
+  max-width:1120px;margin-inline:auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+
+/* top bar */
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.75rem 1.5rem;padding-block:1.5rem}
+.logo{font:500 .95rem var(--font-mono);text-decoration:none;letter-spacing:-.01em}
+.logo i{color:var(--accent);font-style:normal}
+.top nav{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.25rem;font:500 .8rem var(--font-mono)}
+.top nav a{text-decoration:none;color:var(--muted)}
+.top nav a:hover{color:var(--fg)}
+.icon-btn{display:inline-grid;place-items:center;width:34px;height:34px;border:1px solid var(--line);background:transparent;color:var(--fg);border-radius:4px;cursor:pointer}
+.icon-btn:hover{border-color:var(--muted)}
+.icon-btn svg{width:16px;height:16px}
+
+/* hero */
+.hero{position:relative;overflow:hidden}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;
+  -webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent);mask-image:linear-gradient(to bottom,#000 62%,transparent)}
+.hero-inner{position:relative;padding-block:clamp(2.5rem,7vw,5.5rem) clamp(3rem,7vw,5rem)}
+.status{display:inline-flex;align-items:center;gap:.6rem;margin:0 0 1.75rem;font:500 .8rem var(--font-mono);color:var(--muted)}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:ping 2.4s infinite}
+@keyframes ping{
+  0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 55%,transparent)}
+  70%,100%{box-shadow:0 0 0 10px transparent}
+}
+h1{margin:0;max-width:14ch;font:700 clamp(2.6rem,8.4vw,6.4rem)/.98 var(--font-display);letter-spacing:-.035em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{max-width:52ch;margin:1.75rem 0 0;font-size:1.15rem;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.5rem;margin-top:2.25rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.25rem;border-radius:4px;background:var(--accent);color:var(--accent-ink);font:600 .95rem var(--font-body);text-decoration:none;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.textlink{font:500 .9rem var(--font-mono);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:.35em;transition:text-decoration-color .2s}
+.textlink:hover{text-decoration-color:var(--accent)}
+.hint{margin:3rem 0 0;font:400 .75rem var(--font-mono);color:var(--muted)}
+
+/* sections */
+.block{padding-top:clamp(3rem,7vw,5.5rem)}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.5rem 1.5rem;margin-bottom:2rem;padding-top:1.25rem;border-top:1px solid var(--line)}
+h2{margin:0;font:650 clamp(1.8rem,4vw,2.6rem)/1.05 var(--font-display);letter-spacing:-.025em}
+.sec-note{font:400 .8rem var(--font-mono);color:var(--muted)}
+
+/* repos */
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.5rem}
+.chip{padding:.4rem .7rem;border:1px solid var(--line);border-radius:3px;background:transparent;color:var(--muted);font:500 .78rem var(--font-mono);cursor:pointer}
+.chip[aria-pressed="false"]:hover{color:var(--fg);border-color:var(--muted)}
+.chip[aria-pressed="true"]{background:var(--fg);border-color:var(--fg);color:var(--bg)}
+.repos{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.repo{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:1.25rem;padding:1.25rem .5rem;border-bottom:1px solid var(--line);text-decoration:none;transition:background .2s}
+.repo:hover{background:var(--surface)}
+.glyph{width:40px;height:40px;color:var(--accent);flex:none}
+.repo-main{display:grid;gap:.3rem;min-width:0}
+.repo-name{font:600 1.2rem/1.2 var(--font-display);letter-spacing:-.01em;transition:color .2s}
+.repo:hover .repo-name{color:var(--accent)}
+.repo-desc{font-size:.98rem;color:var(--muted)}
+.repo-tags{display:flex;flex-wrap:wrap;gap:.2rem .9rem;margin:0;padding:0;list-style:none;font:400 .75rem var(--font-mono);color:var(--muted)}
+.repo-meta{display:flex;align-items:center;gap:1.25rem;white-space:nowrap;font:400 .8rem var(--font-mono);color:var(--muted)}
+.lang{display:inline-flex;align-items:center;gap:.45rem}
+.lang::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--c)}
+.arrow{color:var(--fg);transition:transform .2s,color .2s}
+.repo:hover .arrow{transform:translate(3px,-3px);color:var(--accent)}
+@media (max-width:620px){
+  .repo{grid-template-columns:auto minmax(0,1fr)}
+  .repo-meta{grid-column:1 / -1;padding-left:calc(40px + 1.25rem)}
+}
+
+/* git graph */
+.graph{--p:0;position:relative;margin:0;padding:0;list-style:none}
+.graph::before,.graph::after{content:"";position:absolute;left:5px;top:12px;width:2px}
+.graph::before{bottom:12px;background:var(--line)}
+.graph::after{height:calc((100% - 24px) * var(--p));background:var(--accent)}
+.commit{position:relative;display:grid;gap:1rem 2.5rem;padding-left:2.5rem;padding-bottom:3rem}
+.commit:last-child{padding-bottom:0}
+@media (min-width:820px){.commit{grid-template-columns:200px minmax(0,1fr)}}
+.node{position:absolute;left:0;top:.4rem;z-index:1;width:12px;height:12px;border-radius:50%;border:2px solid var(--line);background:var(--bg);transition:border-color .25s}
+.node.passed{border-color:var(--accent)}
+.node.head{border-color:var(--accent);background:var(--accent)}
+.meta{display:flex;flex-wrap:wrap;align-items:baseline;align-content:start;gap:.35rem .75rem;font:400 .82rem var(--font-mono);color:var(--muted)}
+@media (min-width:820px){.meta{display:grid;gap:.4rem}}
+.meta p{margin:0}
+.sha{font:500 .9rem var(--font-mono);color:var(--accent)}
+.head-tag{justify-self:start;padding:.1rem .45rem;border:1px solid var(--accent);border-radius:3px;font:500 .7rem var(--font-mono);color:var(--accent)}
+.body{min-width:0}
+.body h3{margin:0;font:650 1.55rem/1.15 var(--font-display);letter-spacing:-.02em}
+.company{margin:.3rem 0 1rem;font-weight:500}
+.body ul.points{display:grid;gap:.45rem;max-width:62ch;margin:0 0 1.1rem;padding-left:1.15rem;color:var(--muted)}
+.points li::marker{color:var(--accent)}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:0;padding:0;list-style:none}
+.tags li{padding:.2rem .55rem;border:1px solid var(--line);border-radius:3px;font:400 .74rem var(--font-mono);color:var(--muted)}
+
+/* stack */
+.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem}
+.stack h3{margin:0 0 .75rem;font:500 .78rem var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.stack ul{display:grid;gap:.3rem;margin:0;padding:0;list-style:none}
+
+/* contact */
+.contact{padding-bottom:clamp(3rem,7vw,5rem)}
+.big{max-width:16ch;margin:0 0 2rem;font:700 clamp(2rem,6.4vw,4.4rem)/1 var(--font-display);letter-spacing:-.035em;text-wrap:balance}
+.mail-row{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1rem}
+.mail{font:500 clamp(1rem,3.4vw,1.5rem) var(--font-mono);color:var(--accent);word-break:break-all}
+.links{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin-top:1.75rem}
+footer{padding-block:1.5rem 2rem;border-top:1px solid var(--line);font:400 .75rem var(--font-mono);color:var(--muted)}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .pulse{animation:none}
+  *{transition:none!important}
+}
+</style>
+
+<header class="wrap top">
+  <a class="logo" id="logo" href="#top">shaneil<i>.</i>clarke</a>
+  <nav aria-label="Sections">
+    <a href="#work">Work</a>
+    <a href="#experience">Experience</a>
+    <a href="#stack">Stack</a>
+    <a href="#contact">Contact</a>
+    <button class="icon-btn" id="theme" type="button" aria-label="Switch colour theme">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M8 2a6 6 0 0 1 0 12z" fill="currentColor"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <canvas id="field" aria-hidden="true"></canvas>
+    <div class="wrap hero-inner">
+      <p class="status"><span class="pulse"></span><span id="status"></span></p>
+      <h1 id="headline"></h1>
+      <p class="lede" id="lede"></p>
+      <div class="cta">
+        <a class="btn" href="#work">See the work <span aria-hidden="true">↓</span></a>
+        <a class="textlink" id="gh-link" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a>
       </div>
-      <div class="text-box">
-        <h1 class="heading-primary">
-          <span class="heading-primary-main">Shaneil Clarke</span>
-          <span class="heading-primary-sub">IT & Software Engineering Professional</span>
-        </h1>
-        <a href="https://shclarke007.github.io/online-cv/" target="_blank" class="btn btn-white btn-animated">Discover more</a>
-        <div class="social-icons">
-          <a
-            class="anchors"
-            href="https://www.linkedin.com/in/shaneil-c-85284568/"
-            target="_blank"
-          >
-            <span class="fab fa-linkedin white"> </span>
-          </a>
-          <a
-            class="anchors"
-            href="https://medium.com/@shaneilske"
-            target="_blank"
-          >
-            <span class="fab fa-medium white"> </span>
-          </a>
-          <a
-            class="anchors"
-            href="https://github.com/shclarke007"
-            target="_blank"
-          >
-            <span class="fab fa-github-square white"> </span>
-          </a>
-          <!-- <a href="#" target="_blank"> <span class="fas fa-envelope-square white"> </span> </a> -->
-        </div>
+      <p class="hint">Move across the grid. Click or tap to send a pulse.</p>
+    </div>
+  </section>
+
+  <section class="block" id="work">
+    <div class="wrap">
+      <div class="sec-head"><h2>Selected work</h2><span class="sec-note" id="repo-count"></span></div>
+      <div class="filters" id="filters" role="group" aria-label="Filter repositories by language"></div>
+      <ul class="repos" id="repos"></ul>
+    </div>
+  </section>
+
+  <section class="block" id="experience">
+    <div class="wrap">
+      <div class="sec-head"><h2>Experience</h2><span class="sec-note">git log --graph --oneline</span></div>
+      <ol class="graph" id="log"></ol>
+    </div>
+  </section>
+
+  <section class="block" id="stack">
+    <div class="wrap">
+      <div class="sec-head"><h2>Toolbox</h2><span class="sec-note">what I reach for first</span></div>
+      <div class="stack" id="stack-grid"></div>
+    </div>
+  </section>
+
+  <section class="block contact" id="contact">
+    <div class="wrap">
+      <div class="sec-head"><h2>Contact</h2><span class="sec-note">replies within a couple of hours</span></div>
+      <p class="big">Open to new roles.</p>
+      <div class="mail-row">
+        <span class="mail" id="mail"></span>
+        <button class="chip" id="copy" type="button">Copy</button>
+        <a class="textlink" id="mail-link">Open in mail app</a>
       </div>
-    </header>
-    <!-- <div class="about-me-container">
-      <section class="about-me-section">
-        <article class="about-me-item" id="about-me">
-          <h2 class="big teal">My Story</h2>
-          <div>
-            <p class="description">
-              I worked within the technology industry for about 11+ years across 
-              <span class="big teal">legal</span>, <span class="big teal">education<span> and
-              <span class="big teal">fintech</span> industries. My previous
-              roles involved working closely with various teams to develop
-              compliance and other regulatory documents, investigating root
-              causes of failures for IT infrastructures and applications and implementing a
-              solution or quick workaround. This helped me develop skills
-              such as being able to <i>'think on my feet'</i> and
-              <span class="big teal"> problem-solving.</span>
-            </p> 
-      <!--  <h2 class="big teal"> Strengths </h2>
-            <p class="description">
-              I started self-studying basic <span class="big teal"> HTML5 </span>,<span class="big teal">CSS3</span> and <span class="big teal">JavaScript</span>. This
-              sparked my interest in web development that I decided to change
-              career. I got accepted for a highly selective and intensive
-              four-month training program to become a high-quality professional
-              software developer.
-            </p> -->
-          <!-- <p class="description">
-              Now working as a
-              <span class="big teal">Full Time MA Law Student.</span> Looking to qualify as a solicitor in the future.
-            </p> 
-          </div> 
-        </article>
-      </section>
-    </div> -->
-
-    <section class="project-container">
-      <div class="project-title">
-        <h2 class="big teal">Latest Blog Posts</h2>
+      <div class="links textlink-row">
+        <a class="textlink" id="gh-link-2" target="https://github.com/shclarke007" rel="noopener noreferrer">GitHub ↗</a>
+        <a class="textlink" id="li-link" target="https://www.linkedin.com/in/shaneil-c-85284568/" rel="noopener noreferrer">LinkedIn ↗</a>
       </div>
-      <div>
-        <p class="big">Demystifying Polymorphic Associations in Rails</p>
-        <span class="description">
-          <a href="https://medium.com/@shaneilske/demystifying-polymorphic-associations-in-rails-d6efc5bf51c0"> Read more on Medium »</a>
-        </span>
+    </div>
+  </section>
+</main>
 
-<!--         <p class="big">Invoke a rake task multiple times</p>
-        <p class="description">
-          How to execute rake tasks multiple times
-          <a href="https://medium.com/@shaneilske/invoke-a-rake-task-multiple-times-1bcb01dee9d9">
-            Read more on Medium »
-          </a>
-        </p> -->
-        
-      </div>
-<!--       <div class="project-section">
-        <div class="project-item">
-          <div class="front">
-            <div class="contents">
-              <img src="img/paw-patrol.png" alt="paw patrol screenshot" />
-              <a target="_blank" href="http://memory-game-js.surge.sh/src/">
-                <h3>JS Memory Game</h3>
-              </a>
-              <div class="skills">
-                <span class="skill-tags">HTML5</span>
-                <span class="skill-tags">CSS3</span>
-                <span class="skill-tags">JavaScript</span>
-                <span class="skill-tags">Surge</span>
-                <span class="skill-tags">Mobile Responsive</span>
-              </div>
-            </div>
-          </div>
-        </div>
+<footer>
+  <div class="wrap" id="foot"></div>
+</footer>
 
-        <div class="project-item">
-          <div class="front">
-            <div class="contents">
-              <img src="img/restaurant.png" alt="website screenshot" />
-              <a
-                target="_blank"
-                href="http://fair-foods.surge.sh/"
-              >
-                <h3>Business API Search</h3>
-              </a>
-              <div class="skills">
-                <span class="skill-tags">HTML5</span>
-                <span class="skill-tags">CSS3</span>
-                <span class="skill-tags">React</span>
-                <span class="skill-tags">API</span>
-              </div>
-            </div>
-          </div>
-        </div>
+<script>
+/* ============================================================
+   EDIT ME. Everything below in PROFILE is placeholder content.
+   Replace names, links, roles and repos with your own.
+   Dates use YYYY-MM. Leave `end` empty for your current role.
+   ============================================================ */
+const PROFILE = {
+  name: "Shaneil Clarke",
+  logo: "shaneil.clarke",
+  status: "Open to new roles",
+  headline: "I build tools that {quietly} works.",
+  lede: "Software/IT engineer with over ten years of experience. I like solving problems you didn't know you have",
+  email: "shaneilske@outlook.com",
+  github: "https://github.com/shclarke007",
+  linkedin: "https://www.linkedin.com/in/shaneil-c-85284568/",
 
-        <div class="project-item">
-          <div class="front">
-            <div class="contents">
-              <img src="img/macbook.jpg" alt="macbook" />
-              <a target="_blank" href="https://acebook-cats.herokuapp.com/">
-                <h3>CatBook Rails Project</h3>
-              </a>
-              <div class="skills">
-                <span class="skill-tags">HTML5</span>
-                <span class="skill-tags">CSS3</span>
-                <span class="skill-tags">Ruby on Rails</span>
-                <span class="skill-tags">Heroku</span>
-                <span class="skill-tags">Travis CI</span>
-                <span class="skill-tags">RSpec</span>
-                <span class="skill-tags">Capybara</span>
-              </div>
-            </div>
-          </div>
-        </div>
+  experience: [
+    {
+      role: "IT Administrator/Engineer",
+      company: "",
+      start: "2025-10",
+      end: "",
+      points: [
+        "Building the internal IT assistant agent used by the entire company to reduce L1 ticket volume and repetictive tasks for the IT support team.",
+        "Supporting security and compliance activities, including access reviews, audit evidence collection, Cyber Essentials, SOC 2, and ISO 27001-related processes.",
+        "Working as part of the IT UX team owning the ITSM platforms, employee onboarding/offboaridng/conversion workflow experience.",
+      ],
+      tech: ["Anthrophic Claude", "Worktato", "Jira", "Okta"]
+    },
+    {
+      role: "Software Engineer (Backend)",
+      company: "Accredible",
+      start: "2023-11",
+      end: "2024-09",
+      points: [
+        "Worked in the integrations team focused on designing and developing the company's software with Restful APIs, Postgres and Ruby/Rails.",
+        "Troubleshoot platform bugs reported by customers, improving platform stability by turning recurring customers bugs into roadmap fixes.",
+        "Enhanced, maintained RESTful API documentation using SwaggerHub for internal and external integration partners, establishing a single source of truth."
+      ],
+      tech: ["Rails", "SwaggerHub", "AWS", "API", "Webhooks"]
+    },
+    {
+      role: "Software Engineer (Full-stack)",
+      company: "Cutover",
+      start: "2019-10",
+      end: "2023-10",
+      points: [
+        "Spearheaded the Runbook squad's documentation and release workflows, while mentoring junior engineers and contributing to code reviews.",
+        "Designed, developed and maintained an incident management orchestration platform now used by thousands at major U.S. and UK banks, built on Ruby on Rails with Docker, React frontend and AWS infrastructure",
+        "Monitor performance and logs using Datadog to optimise the platform and ensure optimal services function."
+      ],
+      tech: ["JavaScript", "TypeScript", "Rails", "React", "Postgres", "Docker"]
+    },
+    {
+      role: "Senior IT Engineer",
+      company: "Kriya",
+      start: "2017-05",
+      end: "2018-11",
+      points: [
+        "Led infrastructure efforts for Kriya (prev. MarketFinance) as the first/sole IT engineer to migrate from external MSP to internal. Maintained Microsoft cloud-based IaaS system and delivered technical/application support and guidance to users.",
+        "Developed and implemented IT best practices in like with ITIL framework, leading to a noticeable improvement in customer satisfaction.",
+        "Collaborated with the Head of Finance and Operations to plan budgets, helping reduce both Opex and Capex spending and reduce operation complexity."
+      ],
+      tech: ["IaaS", "Microsoft Cloud", "ITIL", "Postgres"]
+    }
+  ],
 
-        <div class="project-item">
-          <div class="front">
-            <div class="contents">
-              <img src="img/news.jpg" alt="newspaper" />
-              <a
-                target="_blank"
-                href="https://github.com/learningtocode101/news-summary-challenge"
-              >
-                <h3>News API Challenge</h3>
-              </a>
-              <div class="skills">
-                <span class="skill-tags">HTML5</span>
-                <span class="skill-tags">CSS3</span>
-                <span class="skill-tags">JavaScript</span>
-                <span class="skill-tags">API</span>
-              </div>
-            </div>
-          </div>
-        </div>
+  projects: [
+    { name: "calendar-schedule", lang: "Ruby", stars: 1, url: "https://github.com/shclarke007/work-calendar-schedule#work-schedule-exporter",
+      desc: "Allows upload of shift schedule to generate .ics file for calendar import.",
+      tags: ["ruby", "ruby-anthropic", "calendar"] },
+    { name: "online-portfolio", lang: "HTML", stars: 0, url: "https://github.com/shclarke007/clarkesh#portfolio",
+      desc: "An online cv.",
+      tags: ["portfolio", "github", "html", "css"] },
+    { name: "recipe_finder", lang: "Ruby", stars: 0, url: "https://github.com/shclarke007/recipe_finder#objective",
+      desc: "An application that helps users find the most relevant recipes that they can prepare with the ingredients that they have at home.",
+      tags: ["ruby", "recipes"] },
+  ],
 
-        <div class="project-item">
-          <div class="front">
-            <div class="contents">
-              <img src="img/todo.jpg" alt="notebook and glasses" />
-              <a
-                target="_blank"
-                href="https://github.com/learningtocode101/todo-app"
-              >
-                <h3>ToDo List Application</h3>
-              </a>
-              <div class="skills">
-                <span class="skill-tags">HTML5</span>
-                <span class="skill-tags">CSS3</span>
-                <span class="skill-tags">React</span>
-              </div>
-            </div>
-          </div>
-        </div>
+  stack: {
+    Languages: ["Ruby", "TypeScript", "JavaScript", "HTML", "SQL"],
+    Infrastructure: ["Docker", "AWS", "PostgreSQL"],
+    Practices: ["Code review", "Tests that read like docs", "Small, reversible releases", "Written docs"]
+  }
+};
 
-        <div class="project-item">
-          <div class="front">
-            <div class="contents">
-              <img src="img/alexa.jpg" alt="alexa device" />
-              <a
-                target="_blank"
-                href="https://github.com/learningtocode101/alexa_node_js_quiz"
-              >
-                <h3>Alexa Quiz Application</h3>
-              </a>
-              <div class="skills">
-                <span class="skill-tags">Alexa Skill</span>
-                <span class="skill-tags">Node.js</span>
-                <span class="skill-tags">AWS Lambda</span>
-                <span class="skill-tags">Travis CI</span>
-                <span class="skill-tags">Bespoken</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-    </section>
-    </footer> </footer>
-  </body>
-</html>
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const root = document.documentElement;
+
+  function h(tag, props = {}, ...kids) {
+    const el = document.createElement(tag);
+    for (const [k, v] of Object.entries(props)) {
+      if (v === false || v == null) continue;
+      if (k === "class") el.className = v;
+      else if (v === true) el.setAttribute(k, "");
+      else el.setAttribute(k, v);
+    }
+    for (const kid of kids.flat()) {
+      if (kid == null || kid === false) continue;
+      el.append(kid.nodeType ? kid : document.createTextNode(kid));
+    }
+    return el;
+  }
+
+  function hash(str) {
+    let x = 2166136261;
+    for (let i = 0; i < str.length; i++) { x ^= str.charCodeAt(i); x = Math.imul(x, 16777619); }
+    return x >>> 0;
+  }
+
+  /* ---------- static copy ---------- */
+  document.title = PROFILE.name;
+  const [logoA, logoB] = PROFILE.logo.split(".");
+  $("#logo").replaceChildren(logoA, h("i", {}, "."), logoB || "");
+  $("#status").textContent = PROFILE.status;
+  const hl = $("#headline");
+  PROFILE.headline.split(/\{(.+?)\}/).forEach((part, i) => hl.append(i % 2 ? h("em", {}, part) : part));
+  $("#lede").textContent = PROFILE.lede;
+  for (const id of ["#gh-link", "#gh-link-2"]) $(id).href = PROFILE.github;
+  $("#li-link").href = PROFILE.linkedin;
+  $("#mail").textContent = PROFILE.email;
+  $("#mail-link").href = "mailto:" + PROFILE.email;
+  $("#foot").textContent = "© " + new Date().getFullYear() + " " + PROFILE.name + ". Hand-built with HTML, CSS and vanilla JavaScript.";
+
+  /* ---------- theme toggle ---------- */
+  const dark = matchMedia("(prefers-color-scheme: dark)");
+  const effective = () => root.dataset.theme || (dark.matches ? "dark" : "light");
+  $("#theme").addEventListener("click", () => {
+    root.dataset.theme = effective() === "dark" ? "light" : "dark";
+  });
+
+  /* ---------- repos ---------- */
+  function glyph(seed) {
+    const NS = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(NS, "svg");
+    svg.setAttribute("viewBox", "0 0 5 5");
+    svg.setAttribute("class", "glyph");
+    svg.setAttribute("aria-hidden", "true");
+    const bits = hash(seed);
+    for (let y = 0; y < 5; y++) {
+      for (let x = 0; x < 3; x++) {
+        if (!((bits >> (y * 3 + x)) & 1)) continue;
+        for (const xx of x === 2 ? [2] : [x, 4 - x]) {
+          const r = document.createElementNS(NS, "rect");
+          r.setAttribute("x", xx); r.setAttribute("y", y);
+          r.setAttribute("width", 1); r.setAttribute("height", 1);
+          r.setAttribute("fill", "currentColor");
+          svg.append(r);
+        }
+      }
+    }
+    return svg;
+  }
+
+  const repos = PROFILE.projects;
+  const list = $("#repos");
+  const countEl = $("#repo-count");
+  const setCount = (n) => {
+    countEl.textContent = n === repos.length ? repos.length + " public repositories" : "Showing " + n + " of " + repos.length;
+  };
+  repos.forEach((p) => {
+    list.append(
+      h("li", { "data-lang": p.lang },
+        h("a", { class: "repo", href: p.url, target: "_blank", rel: "noopener noreferrer" },
+          glyph(p.name),
+          h("span", { class: "repo-main" },
+            h("span", { class: "repo-name" }, p.name),
+            h("span", { class: "repo-desc" }, p.desc),
+            h("ul", { class: "repo-tags" }, p.tags.map((t) => h("li", {}, "#" + t)))
+          ),
+          h("span", { class: "repo-meta" },
+            h("span", { class: "lang", style: "--c:hsl(" + (hash(p.lang) % 360) + " 62% 52%)" }, p.lang),
+            p.stars != null && h("span", {}, "★ " + p.stars.toLocaleString("en-GB")),
+            h("span", { class: "arrow", "aria-hidden": "true" }, "↗")
+          )
+        )
+      )
+    );
+  });
+  setCount(repos.length);
+
+  const bar = $("#filters");
+  ["All", ...new Set(repos.map((r) => r.lang))].forEach((lang) => {
+    const b = h("button", { class: "chip", type: "button", "aria-pressed": String(lang === "All") }, lang);
+    b.addEventListener("click", () => {
+      bar.querySelectorAll(".chip").forEach((c) => c.setAttribute("aria-pressed", String(c === b)));
+      let shown = 0;
+      [...list.children].forEach((li) => {
+        const show = lang === "All" || li.dataset.lang === lang;
+        li.hidden = !show;
+        if (show) shown++;
+      });
+      setCount(shown);
+    });
+    bar.append(b);
+  });
+
+  /* ---------- experience as a git graph ---------- */
+  const parseYM = (s) => { const [y, m] = s.split("-").map(Number); return new Date(y, m - 1, 1); };
+  const fmt = (d) => d.toLocaleDateString("en-GB", { month: "short", year: "numeric" });
+  const length = (a, b) => {
+    const n = (b.getFullYear() - a.getFullYear()) * 12 + b.getMonth() - a.getMonth() + 1;
+    const y = Math.floor(n / 12), m = n % 12;
+    return [y && y + " yr", m && m + " mo"].filter(Boolean).join(" ") || "1 mo";
+  };
+
+  const log = $("#log");
+  const today = new Date();
+  PROFILE.experience.forEach((job) => {
+    const start = parseYM(job.start);
+    const end = job.end ? parseYM(job.end) : null;
+    const sha = hash(job.company + job.start).toString(16).padStart(8, "0").slice(0, 7);
+    log.append(
+      h("li", { class: "commit" },
+        h("span", { class: "node" + (end ? "" : " head"), "aria-hidden": "true" }),
+        h("div", { class: "meta" },
+          h("code", { class: "sha" }, sha),
+          !end && h("span", { class: "head-tag" }, "HEAD → main"),
+          h("p", {}, fmt(start) + " – " + (end ? fmt(end) : "Present")),
+          h("p", {}, length(start, end || today))
+        ),
+        h("div", { class: "body" },
+          h("h3", {}, job.role),
+          h("p", { class: "company" }, job.company),
+          h("ul", { class: "points" }, job.points.map((t) => h("li", {}, t))),
+          h("ul", { class: "tags" }, job.tech.map((t) => h("li", {}, t)))
+        )
+      )
+    );
+  });
+
+  const nodes = [...log.querySelectorAll(".node")];
+  let ticking = false;
+  function updateGraph() {
+    ticking = false;
+    const mark = innerHeight * 0.55;
+    const r = log.getBoundingClientRect();
+    const p = Math.min(1, Math.max(0, (mark - r.top) / r.height));
+    log.style.setProperty("--p", p.toFixed(3));
+    nodes.forEach((n) => {
+      const nr = n.getBoundingClientRect();
+      n.classList.toggle("passed", nr.top + nr.height / 2 < mark);
+    });
+  }
+  const queueGraph = () => { if (!ticking) { ticking = true; requestAnimationFrame(updateGraph); } };
+  addEventListener("scroll", queueGraph, { passive: true });
+  addEventListener("resize", queueGraph);
+  updateGraph();
+
+  /* ---------- toolbox ---------- */
+  const grid = $("#stack-grid");
+  Object.entries(PROFILE.stack).forEach(([group, items]) => {
+    grid.append(h("div", {}, h("h3", {}, group), h("ul", {}, items.map((i) => h("li", {}, i)))));
+  });
+
+  /* ---------- copy email ---------- */
+  const copyBtn = $("#copy");
+  copyBtn.addEventListener("click", async () => {
+    const label = "Copy";
+    try {
+      await navigator.clipboard.writeText(PROFILE.email);
+      copyBtn.textContent = "Copied";
+    } catch (e) {
+      const range = document.createRange();
+      range.selectNodeContents($("#mail"));
+      const sel = getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      copyBtn.textContent = "Selected, now copy";
+    }
+    setTimeout(() => { copyBtn.textContent = label; }, 1800);
+  });
+
+  /* ---------- hero: reactive dot grid ---------- */
+  const hero = $(".hero");
+  const cv = $("#field");
+  const ctx = cv.getContext("2d");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)");
+  const GAP = 28, RADIUS = 150, FAR = -1e4;
+  const col = { dot: "#888", acc: "#33f" };
+  const ptr = { x: FAR, y: FAR, tx: FAR, ty: FAR };
+  let W = 0, H = 0, cols = 0, rows = 0;
+  let waves = [], running = false, raf = 0, inView = true;
+
+  function readColors() {
+    const cs = getComputedStyle(root);
+    col.dot = cs.getPropertyValue("--dot").trim() || col.dot;
+    col.acc = cs.getPropertyValue("--accent").trim() || col.acc;
+  }
+
+  function frame(now) {
+    ctx.clearRect(0, 0, W, H);
+    const t = now / 1000;
+    const animate = !reduce.matches;
+    if (animate) {
+      ptr.x += (ptr.tx - ptr.x) * 0.18;
+      ptr.y += (ptr.ty - ptr.y) * 0.18;
+      waves = waves.filter((w) => now - w.t < 2000);
+    }
+    for (let i = 0; i < cols; i++) {
+      for (let j = 0; j < rows; j++) {
+        const x0 = i * GAP, y0 = j * GAP;
+        let x = x0, y = y0, inf = 0;
+        if (animate) {
+          x += Math.cos(t * 0.7 + j * 0.3) * 1.2;
+          y += Math.sin(t * 0.9 + i * 0.35 + j * 0.2) * 1.6;
+          const dx = x0 - ptr.x, dy = y0 - ptr.y, d = Math.hypot(dx, dy);
+          if (d < RADIUS && d > 0.001) {
+            inf = (1 - d / RADIUS) ** 2;
+            x += (dx / d) * inf * 16;
+            y += (dy / d) * inf * 16;
+          }
+          for (const w of waves) {
+            const age = (now - w.t) / 1000;
+            const wx = x0 - w.x, wy = y0 - w.y, wd = Math.hypot(wx, wy);
+            const dl = Math.abs(wd - age * 420);
+            if (dl < 70 && wd > 0.001) {
+              const k = (1 - dl / 70) * Math.max(0, 1 - age / 1.8);
+              x += (wx / wd) * k * 18;
+              y += (wy / wd) * k * 18;
+              if (k > inf) inf = k;
+            }
+          }
+        }
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = col.dot;
+        ctx.beginPath();
+        ctx.arc(x, y, 1.4 + inf * 1.6, 0, 6.2832);
+        ctx.fill();
+        if (inf > 0.04) {
+          ctx.globalAlpha = Math.min(1, inf * 1.3);
+          ctx.fillStyle = col.acc;
+          ctx.beginPath();
+          ctx.arc(x, y, 1.6 + inf * 2.6, 0, 6.2832);
+          ctx.fill();
+        }
+      }
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function size() {
+    const r = hero.getBoundingClientRect();
+    W = r.width; H = r.height;
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    cv.width = Math.round(W * dpr);
+    cv.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    cols = Math.ceil(W / GAP) + 1;
+    rows = Math.ceil(H / GAP) + 1;
+    frame(performance.now());
+  }
+
+  function loop(now) {
+    if (!running) return;
+    frame(now);
+    raf = requestAnimationFrame(loop);
+  }
+  function start() {
+    if (running || reduce.matches || !inView || document.hidden) return;
+    running = true;
+    raf = requestAnimationFrame(loop);
+  }
+  function stop() { running = false; cancelAnimationFrame(raf); }
+
+  const local = (e) => {
+    const r = hero.getBoundingClientRect();
+    return { x: e.clientX - r.left, y: e.clientY - r.top };
+  };
+  hero.addEventListener("pointermove", (e) => {
+    const p = local(e);
+    if (ptr.x < -1000) { ptr.x = p.x; ptr.y = p.y; }
+    ptr.tx = p.x; ptr.ty = p.y;
+  });
+  hero.addEventListener("pointerleave", () => { ptr.x = ptr.y = ptr.tx = ptr.ty = FAR; });
+  hero.addEventListener("pointerdown", (e) => {
+    if (reduce.matches) return;
+    const p = local(e);
+    waves.push({ x: p.x, y: p.y, t: performance.now() });
+    if (waves.length > 4) waves.shift();
+  });
+
+  new IntersectionObserver((entries) => {
+    inView = entries[0].isIntersecting;
+    inView ? start() : stop();
+  }).observe(hero);
+  document.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
+  reduce.addEventListener("change", () => { if (reduce.matches) { stop(); frame(performance.now()); } else start(); });
+
+  const recolor = () => { readColors(); if (!running) frame(performance.now()); };
+  new MutationObserver(recolor).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
+  dark.addEventListener("change", recolor);
+
+  readColors();
+  new ResizeObserver(size).observe(hero);
+  size();
+  start();
+})();
+</script>
+
+</body></html>
