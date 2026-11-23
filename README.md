@@ -1,5 +1,5 @@
 # Portfolio
-Portfolio website developed to showcase front-end development skills with HTML & CSS.  
+Portfolio website developed to showcase front-end development skills with HTML, JavaScript & CSS.  
 
 ## Tech 
 HTML for markup   
