@@ -6,5 +6,5 @@ HTML for markup
 CSS for layout & interactivity
 
 ## Screenshot
-![Screenshot 2022-01-12 at 12 05 50](https://user-images.githubusercontent.com/16685932/149137548-bd1bacb2-a891-400c-aee1-2c2251b3ac88.png)
+<img width="1199" height="730" alt="Screenshot 2026-11-23 at 14 49 07" src="https://github.com/user-attachments/assets/7d9f5dfb-e208-49c4-b826-855cfd2be290" />
 
