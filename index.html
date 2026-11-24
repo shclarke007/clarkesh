@@ -200,9 +200,8 @@ footer{padding-block:1.5rem 2rem;border-top:1px solid var(--line);font:400 .75re
       <div class="sec-head"><h2>Contact</h2><span class="sec-note">replies within a couple of hours</span></div>
       <p class="big">Open to new roles.</p>
       <div class="mail-row">
-        <span class="mail" id="mail"></span>
-        <button class="chip" id="copy" type="button">Copy</button>
-        <a class="textlink" id="mail-link">Open in mail app</a>
+        <span class="mail" id="mail" aria-label="Email address, hidden. Use the copy button.">••••••@••••••.•••</span>
+        <button class="chip" id="copy" type="button">Copy email</button>
       </div>
       <div class="links textlink-row">
         <a class="textlink" id="gh-link-2" target="https://github.com/shclarke007" rel="noopener noreferrer">GitHub ↗</a>
@@ -340,8 +339,6 @@ const PROFILE = {
   $("#lede").textContent = PROFILE.lede;
   for (const id of ["#gh-link", "#gh-link-2"]) $(id).href = PROFILE.github;
   $("#li-link").href = PROFILE.linkedin;
-  $("#mail").textContent = PROFILE.email;
-  $("#mail-link").href = "mailto:" + PROFILE.email;
   $("#foot").textContent = "© " + new Date().getFullYear() + " " + PROFILE.name + ". Hand-built with HTML, CSS and vanilla JavaScript.";
 
   /* ---------- theme toggle ---------- */
@@ -478,13 +475,17 @@ const PROFILE = {
   /* ---------- copy email ---------- */
   const copyBtn = $("#copy");
   copyBtn.addEventListener("click", async () => {
-    const label = "Copy";
+    const label = "Copy email";
     try {
       await navigator.clipboard.writeText(PROFILE.email);
       copyBtn.textContent = "Copied";
     } catch (e) {
+      /* Clipboard blocked: reveal the address so it can be copied by hand. */
+      const mail = $("#mail");
+      mail.textContent = PROFILE.email;
+      mail.removeAttribute("aria-label");
       const range = document.createRange();
-      range.selectNodeContents($("#mail"));
+      range.selectNodeContents(mail);
       const sel = getSelection();
       sel.removeAllRanges();
       sel.addRange(range);
